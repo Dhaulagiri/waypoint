@@ -14,7 +14,7 @@
     }
   }
 
-  p {
+  &__top-line {
     display: inline-flex;
     align-items: center;
   }
@@ -32,7 +32,7 @@
     margin-right: scale.$sm-2;
   }
 
-  small {
+  &__second-line {
     display: flex;
     align-items: center;
     min-height: scale.$lg-2;
@@ -60,6 +60,10 @@
         justify-content: center;
       }
     }
+  }
+
+  .operation-status-indicator {
+    margin-left: scale.$sm--3;
   }
 }
 

@@ -107,11 +107,11 @@ module('Acceptance | deployments list', function (hooks) {
 
     await page.visit();
 
-    for (let parent of ['latest-deployments', 'deployment-list']) {
-      let badges = findAll(`[data-test-${parent}] [data-test-status-badge]`);
-      let statuses = badges.map((b) => b.getAttribute('data-test-status-badge'));
+    assert.dom('[data-test-app-card-deployment]').includesText('Starting…');
 
-      assert.deepEqual(statuses, ['alive', 'ready', 'down'], `correct status badges appear in ${parent}`);
-    }
+    let badges = findAll(`[data-test-deployment-list] [data-test-status-badge]`);
+    let statuses = badges.map((b) => b.getAttribute('data-test-status-badge'));
+
+    assert.deepEqual(statuses, ['alive', 'ready', 'down'], `correct status badges appear in ${parent}`);
   });
 });
